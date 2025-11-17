@@ -1,4 +1,4 @@
-# fastapi-example 
+# Ecoligo-FastAPI
 
 A simple example of using Fast API in Python.
 
