@@ -18,13 +18,22 @@ jobs:
       with:
         python-version: '3.13'
 
+    - name: Install uv
+      run: |
+        pip install uv==0.8.22
+
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        uv pip install --system -r requirements.txt
 
     - name: Run unit tests
       run: |
         make unittest
+
+    - name: Run linting (optional)
+      run: |
+        echo "Linting step - can add flake8, black, etc."
+      continue-on-error: true
 
     - name: Generate image tag
       id: tag
